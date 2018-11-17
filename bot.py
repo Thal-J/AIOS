@@ -59,16 +59,16 @@ async def on_message(messagename):
     dreamlist.append(dream1)
 
     examplembed = discord.Embed(
-        title='Retrieving information',
+        title='Retrieving information...',
         description=dreamoutput,
         colour=discord.Colour.red()
     )
     examplembed.set_footer(text='AIOS functionality preparing')
-    examplembed.set_image(
-        url='https://media.discordapp.net/attachments/494443546989035520/509201412672978944/unknown.png?width=888'
-            '&height=500')
+    # examplembed.set_image(
+    #    url='https://media.discordapp.net/attachments/494443546989035520/509201412672978944/unknown.png?width=888'
+    #         '&height=500')
     examplembed.set_thumbnail(
-        url='https://cdn.discordapp.com/attachments/369940161796112394/512618874689290261/k86qvkS.png')
+        url='https://www.pdfonline.com/convert-jpg-to-pdf/images/loadingAnimation.gif')
     examplembed.set_author(name='AIOS',
                            icon_url='https://cdn.discordapp.com/attachments/369940161796112394/512618874689290261'
                                     '/k86qvkS.png')
@@ -79,7 +79,7 @@ async def on_message(messagename):
         colour=discord.Colour.green()
     )
     NewEmbed.set_footer(text='AIOS functionality delivered')
-    NewEmbed.set_image(url='https://cdn.discordapp.com/attachments/494443546989035520/512170758848380928/unknown.png')
+    #NewEmbed.set_image(url='https://cdn.discordapp.com/attachments/494443546989035520/512170758848380928/unknown.png')
     NewEmbed.set_thumbnail(
         url='https://cdn.discordapp.com/attachments/369940161796112394/512618874689290261/k86qvkS.png')
     NewEmbed.set_author(name='AIOS',
