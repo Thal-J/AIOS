@@ -1,4 +1,5 @@
 # setup
+import random
 import time
 import discord
 
@@ -10,9 +11,17 @@ token = str(tokenFile.read())
 
 @client.event
 async def on_message(messagename):
+
+
+    dreams = [
+     "Dreaming...",
+     "Torchbugs...",
+     "Overturned jar..."
+    ]
+
     examplembed = discord.Embed(
         title='Retrieving information',
-        description='Dreaming—torchbugs—overturned jar',
+        description=random.choice(dreams),
         colour=discord.Colour.red()
     )
     examplembed.set_footer(text='AIOS functionality preparing')
@@ -48,6 +57,5 @@ async def on_message(messagename):
 async def on_ready():
     print("ready")
     await client.change_presence(game=discord.Game(name='The Engine of Expression'))
-
 
 client.run(token)
