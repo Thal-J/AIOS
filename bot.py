@@ -19,15 +19,43 @@ token = str(tokenFile.read())
 async def on_message(messagename):
     # This is a pool of random 'dreams' which the bot pulls from in later sections of the code
     dreamlist = [
-        "Dreaming",
         "Torchbugs",
-        "Overturned jar"
+        "Overturned jar",
+        "Familiar embrace",
+        "Discarded Flowers",
+        "Empty Cylinder",
+        "Raindrops on glass",
+        "Wood Smoke",
+        "Deceased bird",
+        "Handkerchief",
+        "Glowing embers",
+        "Wool blanket",
+        "Storm clouds",
+        "Wind",
+        "Familiar smell",
+        "Wrinkled hands",
+        "Burning tapestry",
+        "Screaming",
+        "Soiled tablecloth",
+        "Washboard",
+        "Pottery wheel",
+        "Laughter",
+        "Flower garden",
+        "Bird songs",
+        "Fish pond",
+        "Skipping stone",
+        "Moonlight",
+        "Scrib jelly",
+        "A rainy day",
+        "One netch",
+        "Two netch",
+
     ]
 
     dream1 = random.choice(dreamlist)
     dreamlist.remove(dream1)
     dream2 = random.choice(dreamlist)
-    dreamoutput = ("Dreaming…" + dream1 + "… " + dream2 + ".")
+    dreamoutput = ("Dreaming … " + dream1 + ". " + dream2 + ".")
     dreamlist.append(dream1)
 
     examplembed = discord.Embed(
