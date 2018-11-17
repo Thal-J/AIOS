@@ -18,16 +18,17 @@ token = str(tokenFile.read())
 async def on_message(messagename):
 
     #This is a pool of random 'dreams' which the bot pulls from in later sections of the code
-    dreams = [
+    dreamlist = [
      "Dreaming",
      "Torchbugs",
      "Overturned jar"
     ]
     
-    dream1=random.choice(dreams)
-    Dreams.remove(dream1)
+    dream1=random.choice(dreamlist)
+    dreamlist.remove(dream1)
     dream2=random.choice(dreams)
     dreamoutput=("Dreaming…" + Dream1 + "… " + Dream2 + ".")
+    dreamlist.append(dream1)
     
     examplembed = discord.Embed(
         title='Retrieving information',
