@@ -64,7 +64,7 @@ async def on_message(messagename):
 
     # This establishes the loading-screen embed message
     examplembed = discord.Embed(
-        # The title of theembed is displayed as "Retrieving information"
+        # The title of the embed is displayed as "Retrieving information"
         title='Retrieving information...',
         # This displays the combined dreams
         description=dreamoutput,
