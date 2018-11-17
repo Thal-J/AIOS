@@ -1,38 +1,38 @@
 # setup
-#This imports the random library; a library which allows random functionality
+# This imports the random library; a library which allows random functionality
 import random
-#This imports time; a library allowing timing and other functions
+# This imports time; a library allowing timing and other functions
 import time
-#This imports discord; a library allowing the program to access Discord
+# This imports discord; a library allowing the program to access Discord
 import discord
 
-#This sets the client which the program uses to access Discord
+# This sets the client which the program uses to access Discord
 client = discord.Client()
 
-#This conceals the token from you, the causal reader.
+# This conceals the token from you, the causal reader.
 tokenFile = open("token.txt", "r")
 token = str(tokenFile.read())
 
-@client.event
-#This enables checking of messages
-async def on_message(messagename):
 
-    #This is a pool of random 'dreams' which the bot pulls from in later sections of the code
+@client.event
+# This enables checking of messages
+async def on_message(messagename):
+    # This is a pool of random 'dreams' which the bot pulls from in later sections of the code
     dreamlist = [
-     "Dreaming",
-     "Torchbugs",
-     "Overturned jar"
+        "Dreaming",
+        "Torchbugs",
+        "Overturned jar"
     ]
-    
-    dream1=random.choice(dreamlist)
+
+    dream1 = random.choice(dreamlist)
     dreamlist.remove(dream1)
-    dream2=random.choice(dreams)
-    dreamoutput=("Dreaming…" + Dream1 + "… " + Dream2 + ".")
+    dream2 = random.choice(dreamlist)
+    dreamoutput = ("Dreaming…" + dream1 + "… " + dream2 + ".")
     dreamlist.append(dream1)
-    
+
     examplembed = discord.Embed(
         title='Retrieving information',
-        description=(dreamoutput),
+        description=dreamoutput,
         colour=discord.Colour.red()
     )
     examplembed.set_footer(text='AIOS functionality preparing')
@@ -65,12 +65,13 @@ async def on_message(messagename):
 
 
 @client.event
-#A number of functions relating to the bot's activation
+# A number of functions relating to the bot's activation
 async def on_ready():
-    #The bot outputs 'ready' to the pythonic output
+    # The bot outputs 'ready' to the pythonic output
     print("ready")
-    #The bot changes its now playing status to 'The Engine of Expression'
+    # The bot changes its now playing status to 'The Engine of Expression'
     await client.change_presence(game=discord.Game(name='The Engine of Expression'))
 
-#this runs the program
+
+# this runs the program
 client.run(token)
