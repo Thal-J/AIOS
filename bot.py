@@ -1,18 +1,23 @@
 # setup
+#This imports the random library; a library which allows random functionality
 import random
+#This imports time; a library allowing timing and other functions
 import time
+#This imports discord; a library allowing the program to access Discord
 import discord
 
+#This sets the client which the program uses to access Discord
 client = discord.Client()
 
+#This conceals the token from you, the causal reader.
 tokenFile = open("token.txt", "r")
 token = str(tokenFile.read())
 
-
 @client.event
+#This enables checking of messages
 async def on_message(messagename):
 
-
+    #This is a pool of random 'dreams' which the bot pulls from in later sections of the code
     dreams = [
      "Dreaming...",
      "Torchbugs...",
@@ -54,8 +59,12 @@ async def on_message(messagename):
 
 
 @client.event
+#A number of functions relating to the bot's activation
 async def on_ready():
+    #The bot outputs 'ready' to the pythonic output
     print("ready")
+    #The bot changes its now playing status to 'The Engine of Expression'
     await client.change_presence(game=discord.Game(name='The Engine of Expression'))
 
+#this runs the program
 client.run(token)
