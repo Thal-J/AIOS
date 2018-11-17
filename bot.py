@@ -1,3 +1,4 @@
+#AIOS: A Discord bot
 # setup
 # This imports the random library; a library which allows random functionality
 import random
@@ -51,16 +52,24 @@ async def on_message(messagename):
         "Two netch",
 
     ]
-
+    #This selects a random dream from the dreamlist
     dream1 = random.choice(dreamlist)
+    #This removes the dream from the list so it cannot be selected twice
     dreamlist.remove(dream1)
+    #This selects a second dream
     dream2 = random.choice(dreamlist)
-    dreamoutput = ("Dreaming … " + dream1 + ". " + dream2 + ".")
+    #This strings the dreams together
+    dreamoutput = ("Dreaming… " + dream1 + ". " + dream2 + ".")
+    #This restores the first dream to the list so it can be picked in future
     dreamlist.append(dream1)
-
+    
+    #This establishes the loading-screen embed message
     examplembed = discord.Embed(
+        #The title of theembed is displayed as "Retrieving information"
         title='Retrieving information',
+        #This displays the combined dreams
         description=dreamoutput,
+        #This sets the sidebar colour of the embed to red
         colour=discord.Colour.red()
     )
     examplembed.set_footer(text='AIOS functionality preparing')
