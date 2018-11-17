@@ -19,14 +19,19 @@ async def on_message(messagename):
 
     #This is a pool of random 'dreams' which the bot pulls from in later sections of the code
     dreams = [
-     "Dreaming...",
-     "Torchbugs...",
-     "Overturned jar..."
+     "Dreaming",
+     "Torchbugs",
+     "Overturned jar"
     ]
-
+    
+    dream1=random.choice(dreams)
+    Dreams.remove(dream1)
+    dream2=random.choice(dreams)
+    dreamoutput=("Dreaming…" + Dream1 + "… " + Dream2 + ".")
+    
     examplembed = discord.Embed(
         title='Retrieving information',
-        description=random.choice(dreams),
+        description=(dreamoutput),
         colour=discord.Colour.red()
     )
     examplembed.set_footer(text='AIOS functionality preparing')
